@@ -1,0 +1,6 @@
+exclude:
+  - "node_modules"
+  - "Gruntfile.coffee"
+  - "README.md"
+  - "npm-debug.log"
+  - "package.json"
