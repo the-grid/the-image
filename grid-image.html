@@ -1,0 +1,34 @@
+<element name="grid-image" attributes="ldpi mdpi xhdpi width height alt">
+  <template>
+    <img src="{{ src }}" style="width: {{ width }}px; height: {{ height }}px" alt="{{ alt }}">
+  </template>
+  <script>
+    if (this !== window) {
+      var getImageVariant = function (instance) {
+        var variant = getDensityVariant();
+        return instance.attributes[variant].value;
+      };
+
+      var getDensityVariant = function () {
+        var density = window.devicePixelRatio;
+        if (!density) {
+          return 'mdpi';
+        }
+        if (density < 1) {
+          return 'ldpi';
+        }
+        if (density >= 2) {
+          return 'xhdpi';
+        }
+        return 'mdpi';
+      };
+
+      Polymer.register(this, {
+        src: '',
+        ready: function () {
+          this.src = getImageVariant(this);
+        }
+      });
+    }
+  </script>
+</element>

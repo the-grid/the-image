@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>grid-image - a responsive image tag</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-responsive.min.css">
+    <script src="./vendor/polymer.min.js"></script>
+    <link rel="import" href="grid-image.html">
+  </head>
+  <body>
+    <section class="container demo">
+      <h1>Demo</h1>
+      <grid-image ldpi="./images/shnjaka-low.jpg" mdpi="./images/shnjaka-1x.jpg" xhdpi="./images/shnjaka-2x.jpg" alt="Shnjaka on Lake Onega" width="300" height="225"></grid-image>
+    </section>
+    <section class="container">
+      <h1>Documentation</h1>
+      <h2>Image size variants</h2>
+      <p>
+      This Web Component follows the <a href="http://developer.android.com/guide/practices/screens_support.html#range">Android guidelines</a> for naming the different screen densities supported. In nutshell:
+      </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Density</th>
+            <th>DPI</th>
+            <th>Example devices</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>ldpi</code></td>
+            <td>120</td>
+            <td>budget smartphones</td>
+          </tr>
+          <tr>
+            <td><code>mdpi</code></td>
+            <td>160</td>
+            <td>regular computers</td>
+          </tr>
+          <tr>
+            <td><code>xhdpi</code></td>
+            <td>320</td>
+            <td>retina-class devices</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+  </body>
+</html>
