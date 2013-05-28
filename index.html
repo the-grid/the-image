@@ -5,23 +5,47 @@
     <title>the-image - a responsive image tag</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrap-responsive.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./vendor/polymer.min.js"></script>
     <link rel="import" href="the-image.html">
   </head>
   <body>
     <section class="container">
+      <div class="hero-unit">
       <h1>the-image &mdash; a responsive image tag</h1>
-      <p>
+      <p class="lead">
       <code>the-image</code> is a responsive image tag provided as a <a href="https://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html">Web Component</a>. It allows a single HTML tag to be used for providing multiple variants of an image for different classes of devices and displays. <code>the-image</code> can be used right now, without having to wait for the <a href="http://www.w3.org/community/respimg/">Responsive Image spec</a> to trickle down to mainstream browsers.</p>
+    </div>
     </section>
     <section class="container demo">
-      <h1>Demo</h1>
+      <h2>Demo</h2>
       <the-image ldpi="./images/shnjaka-low.jpg" mdpi="./images/shnjaka-1x.jpg" xhdpi="./images/shnjaka-2x.jpg" alt="Shnjaka on Lake Onega" width="300" height="225"></the-image>
       <the-image ldpi="./images/flyingpig-low.png" mdpi="./images/flyingpig-1x.png" xhdpi="./images/flyingpig-2x.png" alt="Flying pig" width="300" height="269"></the-image>
     </section>
     <section class="container">
-      <h1>Documentation</h1>
-      <h2>Image size variants</h2>
+      <h2>Documentation</h2>
+
+      <p>Before using <code>the-image</code> you may want to read about <a href="http://www.polymer-project.org/">Polymer Web Components</a> and watch the <a href="https://www.youtube.com/watch?v=0g0oOOT86NY&feature=youtube_gdata_player">Web Components video from Google I/O 2013</a>.</p>
+
+      <h3>Dependencies</h3>
+
+      <p>Web Components are not yet supported natively in mainstream browsers, and so in order to use <code>the-image</code> you need to include the <a href="http://www.polymer-project.org/getting-the-code.html">Polymer polyfill</a> to your HTML pages:</p>
+
+      <pre><code>&lt;script src="vendor/polymer.min.js"&gt;&lt;/script&gt;</code></pre>
+
+      <p>You also need to import <a href="./the-image.html">the component</a> itself:</p>
+
+      <pre><code>&lt;link rel="import" href="vendor/the-image.html"&gt;</code></pre>
+
+      <h3>Usage</h3>
+
+      <p>Once the component has been imported, you can use it very similarly to how you would use a regular HTML <code>img</code> tag, with the difference that you can provide this one dimensions and multiple variants of the image:</p>
+
+      <pre><code>&lt;the-image mdpi="image.jpg" xhdpi="image@2X.jpg" width="300" height="200"&gt;&lt;/the-image&gt;</code></pre>
+
+      <p>Each usage of <code>the-image</code> tag creates a <a href="http://www.polymer-project.org/platform/shadow-dom.html">Shadow DOM</a> fragment with an <code>img</code> tag inside it. This image tag will automatically point to the best image variant for the user's device.</p>
+
+      <h3>Image size variants</h3>
       <p>
       This Web Component follows the <a href="http://developer.android.com/guide/practices/screens_support.html#range">Android guidelines</a> for naming the different screen densities supported. In nutshell:
       </p>
