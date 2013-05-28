@@ -12,15 +12,22 @@
   <body>
     <section class="container">
       <div class="hero-unit">
-      <h1>the-image &mdash; a responsive image tag</h1>
+      <h1>Responsive image tag as a Web Component</h1>
       <p class="lead">
       <code>the-image</code> is a responsive image tag provided as a <a href="https://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html">Web Component</a>. It allows a single HTML tag to be used for providing multiple variants of an image for different classes of devices and displays. <code>the-image</code> can be used right now, without having to wait for the <a href="http://www.w3.org/community/respimg/">Responsive Image spec</a> to trickle down to mainstream browsers.</p>
     </div>
     </section>
     <section class="container demo">
       <h2>Demo</h2>
-      <the-image ldpi="./images/shnjaka-low.jpg" mdpi="./images/shnjaka-1x.jpg" xhdpi="./images/shnjaka-2x.jpg" alt="Shnjaka on Lake Onega" width="300" height="225"></the-image>
-      <the-image ldpi="./images/flyingpig-low.png" mdpi="./images/flyingpig-1x.png" xhdpi="./images/flyingpig-2x.png" alt="Flying pig" width="300" height="269"></the-image>
+      <ul class="thumbnails">
+        <li>
+          <the-image ldpi="./images/shnjaka-low.jpg" mdpi="./images/shnjaka-1x.jpg" xhdpi="./images/shnjaka-2x.jpg" alt="Shnjaka on Lake Onega" width="300" height="225" class="thumbnail"></the-image>
+        </li>
+        <li>
+          <the-image ldpi="./images/flyingpig-low.png" mdpi="./images/flyingpig-1x.png" xhdpi="./images/flyingpig-2x.png" alt="Flying pig" width="300" height="269" class="thumbnail"></the-image>
+        </li>
+      </ul>
+      <p class="alert alert-info">Best viewed side-by-side on two screens of different pixel densities. For example, a Retina tablet and a regular laptop. Make sure to also inspect the elements in your web console!</p>
     </section>
     <section class="container">
       <h2>Documentation</h2>
@@ -75,7 +82,13 @@
           </tr>
         </tbody>
       </table>
-
     </section>
+    <footer class="footer">
+      <div class="container">
+        <p>
+        Built by <a href="https://github.com/the-grid">The Grid</a>. Available under the MIT license.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
